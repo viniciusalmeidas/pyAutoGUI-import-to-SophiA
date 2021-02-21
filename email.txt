@@ -1,0 +1,15 @@
+nome = [
+    "Marcelo Rodrigues Costa",
+    "Fabio Jorge Duarte Lima",
+    "Thais Soares Gonçalves",
+    "Thainá Freadico Silva"
+]
+
+email = [
+    "marcelo.costa@colegioapogeu.com.br",
+    "fabio.lima@colegioapogeu.com.br"
+    "thais.goncalves@colegioapogeu.com.br"
+    "thaina.fradico@colegioapogeu.com.br"
+
+
+]

@@ -9,5 +9,12 @@ import asyncio
 
 
 
-# update_email('Marcelo Rodrigues Costa', 80144577, 'marcelo.costa@colegioapogeu.com.br')
+listaEmails = {
+    'Marcelo Rodrigues Costa':'marcelo.costa@colegioapogeu.com.br',
+    'Fabio Jorge Duarte Lima':'fabio.lima@colegioapogeu.com.br',
+    'Thais Soares Gonçalves':'thais.goncalves@colegioapogeu.com.br',
+    'Thainá Fradico Silva':'thaina.fradico@colegioapogeu.com.br'
+}
+
     
+

@@ -8,7 +8,7 @@ import asyncio
 def openSophia(path, login, senha):
     try:
         subprocess.Popen(path, stdout=subprocess.PIPE)# sophia = subprocess.call(path)
-        sleep(1.5)
+        sleep(5)
         pg.click(x=665, y=514)
         pg.write(login)
         sleep(0.5)
@@ -34,41 +34,22 @@ def copiar_texto_coordenadas(a,b):
      
 
 def update_email(nome,email):
-    pg.click(pg.locateCenterOnScreen('.\images\colaboradores.png'))
-    sleep(0.75)  
+    sleep(1)  
     pg.click(x=715, y=436)
-    # pg.press('f3')
     pg.write(nome)
     sleep(0.75)
     pg.press('enter')
-    sleep(0.4)
-    pg.press('tab')
-    sleep(0.4)
-    pg.press('enter')
-    sleep(0.75)
-    # matriculaScreen = copiar_texto_coordenadas(1575, 217)#copia texto da Screen
-    # print(matriculaScreen)
-    # print(matricula)
+    sleep(8)
+    pg.click(x=1084, y=330)
+    sleep(1.5)
     if (1 == 1): #str(matricula)):
-        pg.click(pg.locateCenterOnScreen('.\images\colaboradores.png'))
-        sleep(0.5)  
-        pg.doubleClick(x=509, y=676)
-        # pg.keyDown('ctrl')
-        # sleep(0.4)
-        # pg.keyDown('shift')
-        # sleep(0.4)
-        # pg.press('left')
-        # sleep(0.4)
-        # pg.keyUp('ctrl')
-        # sleep(0.4)
-        # pg.keyUp('shift')
-        # sleep(0.4)
+        pg.doubleClick(x=1145, y=378)
         pg.write(email)
-        sleep(1)
-        pg.click(pg.locateCenterOnScreen('.\images\gravar.png'))
-        sleep(2)
-        pg.click(pg.locateCenterOnScreen('.\images\jechar.png'))
         sleep(0.5)
+        pg.click(pg.locateCenterOnScreen('.\images\gravar.png'))
+        sleep(5)
+        pg.click(pg.locateCenterOnScreen('.\images\jechar.png'))
+        sleep(1)
     else:
         pg.alert("A matricula não é igual")
         # falhaEmail.append(matricula)
@@ -77,23 +58,21 @@ def update_email(nome,email):
     
 
 def main():
-    # Login on SophiA
-    login = pg.prompt(title='Import-SophiA by git:viniciusalmeidas',text= 'Qual é seu login?')
-    senha = pg.password(title='Import-SophiA by git:viniciusalmeidas',text= 'Senha do SophiA?',mask='*')
+    # login = pg.prompt(title='Import-SophiA by git:viniciusalmeidas',text= 'Qual é seu login?')
+    # senha = pg.password(title='Import-SophiA by git:viniciusalmeidas',text= 'Senha do SophiA?',mask='*')
 
     # Open program on string path
-    auth = openSophia('C:\SophiA\SophiA.exe', login, senha)
+    auth = openSophia('C:\SophiA\SophiA.exe', 'VINICIUSS', '123456')
     errorLogin = pg.locateCenterOnScreen('.\images\errorLogin.png')
 
     if (errorLogin == None) and (auth == True):
         falhaEmail = []
         
         # Update client email: Marcelo Rodrigues Costa
-        update_email('Marcelo Rodrigues Costa','marcelo.costa@colegioapogeu.com.br')
-        update_email('Vinicius Almeida de Souza','vinicius.souza@colegioapogeu.com.br')
-    
+        for nome in listaEmails:
+            update_email(nome, listaEmails[nome])
+
         pg.alert('PROCESSO CONCLUIDO COM SUCESSO')
-        
     else:
         print("USER INVALIDO")
         exit()
@@ -104,7 +83,6 @@ def main():
 
 if __name__ == '__main__':
     main()
-
 
 
 
