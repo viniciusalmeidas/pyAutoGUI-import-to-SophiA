@@ -90,8 +90,6 @@ def main():
         
         # Update client email: Marcelo Rodrigues Costa
         update_email('Marcelo Rodrigues Costa','marcelo.costa@colegioapogeu.com.br')
-        update_email('Fabio Jorge Duarte Lima','fabio.lima@colegioapogeu.com.br')
-        update_email('Thais Soares Gonçalves','thais.goncalves@colegioapogeu.com.br')
         update_email('Vinicius Almeida de Souza','vinicius.souza@colegioapogeu.com.br')
     
         pg.alert('PROCESSO CONCLUIDO COM SUCESSO')
