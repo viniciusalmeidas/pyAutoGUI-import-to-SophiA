@@ -4,6 +4,7 @@ import subprocess
 from time import sleep
 import pyperclip
 import asyncio
+import email
 
 def openSophia(path, login, senha):
     try:
@@ -34,6 +35,7 @@ def copiar_texto_coordenadas(a,b):
      
 
 def update_email(nome,email):
+    pg.click(pg.locateCenterOnScreen('.\images\colaboradores.png'))
     sleep(1)  
     pg.click(x=715, y=436)
     pg.write(nome)
@@ -64,20 +66,19 @@ def main():
     # Open program on string path
     auth = openSophia('C:\SophiA\SophiA.exe', 'VINICIUSS', '123456')
     errorLogin = pg.locateCenterOnScreen('.\images\errorLogin.png')
-
+    
+    # print(email.listaEmails)
     if (errorLogin == None) and (auth == True):
-        falhaEmail = []
         
-        # Update client email: Marcelo Rodrigues Costa
-        for nome in listaEmails:
-            update_email(nome, listaEmails[nome])
+        # Update client email
+        # for nome in email.listaEmails:
+        # update_email(nome, email.listaEmails[nome])
+        update_email('MARCELO RODRIGUES COSTA','marcelo.costa@colegioapogeu.com.br')
 
         pg.alert('PROCESSO CONCLUIDO COM SUCESSO')
     else:
         print("USER INVALIDO")
         exit()
-
-
 
 
 
@@ -87,6 +88,7 @@ if __name__ == '__main__':
 
 
 
+    
 
 
 
